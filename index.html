@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Laser Systems - Plataforma de Gestión de Ventas</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <h1>🔷 CRM Laser Systems</h1>
+      </div>
+      <div class="user-info">
+        <span class="user-role">Director de Ventas</span>
+        <button class="btn-logout">Cerrar Sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">🔴 Prioridad Alta</div>
+        <a href="#datos" class="nav-link active" data-module="datos">
+          <span class="nav-icon">📊</span>
+          <span>Datos</span>
+        </a>
+        <a href="#ventas" class="nav-link" data-module="ventas">
+          <span class="nav-icon">💰</span>
+          <span>Ventas</span>
+        </a>
+        <a href="#prospeccion" class="nav-link" data-module="prospeccion">
+          <span class="nav-icon">🎯</span>
+          <span>Prospección Asistida</span>
+        </a>
+        <a href="#reportes" class="nav-link" data-module="reportes">
+          <span class="nav-icon">📈</span>
+          <span>Reportes Director</span>
+        </a>
+        <a href="#acceso" class="nav-link" data-module="acceso">
+          <span class="nav-icon">🔐</span>
+          <span>Acceso y Roles</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">🟠 Prioridad Media</div>
+        <a href="#portabilidad" class="nav-link" data-module="portabilidad">
+          <span class="nav-icon">📱</span>
+          <span>Portabilidad</span>
+        </a>
+        <a href="#retencion" class="nav-link" data-module="retencion">
+          <span class="nav-icon">🔔</span>
+          <span>Retención y Alertas</span>
+        </a>
+        <a href="#adopcion" class="nav-link" data-module="adopcion">
+          <span class="nav-icon">📋</span>
+          <span>Interfaz Vendedor</span>
+        </a>
+        <a href="#fidelizacion" class="nav-link" data-module="fidelizacion">
+          <span class="nav-icon">⭐</span>
+          <span>Fidelización</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">🟡 Prioridad Baja</div>
+        <a href="#operacion" class="nav-link" data-module="operacion">
+          <span class="nav-icon">⚙️</span>
+          <span>Operación</span>
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Módulo Datos -->
+    <section class="module active" id="module-datos">
+      <div class="module-header">
+        <h2>📊 Módulo Datos</h2>
+        <p>Panel centralizado de información con validación automática</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <div class="stat-value">98.5%</div>
+            <div class="stat-label">Integridad de Datos</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📁</div>
+          <div class="stat-info">
+            <div class="stat-value">12,543</div>
+            <div class="stat-label">Registros Totales</div>
+          </div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-info">
+            <div class="stat-value">23</div>
+            <div class="stat-label">Duplicados Detectados</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔄</div>
+          <div class="stat-info">
+            <div class="stat-value">Hace 5 min</div>
+            <div class="stat-label">Última Sincronización</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Validación de Datos</h3>
+          <button class="btn-primary">Sincronizar Ahora</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Estado</th>
+                <th>Registro</th>
+                <th>Tipo de Alerta</th>
+                <th>Archivo Origen</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-warning">Duplicado</span></td>
+                <td>Cliente: Industrias del Norte S.A.</td>
+                <td>RFC duplicado</td>
+                <td>ventas_enero.xlsx</td>
+                <td><button class="btn-small">Resolver</button></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">Válido</span></td>
+                <td>Cliente: TecnoLaser Mx</td>
+                <td>-</td>
+                <td>ventas_enero.xlsx</td>
+                <td><button class="btn-small">Ver</button></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-warning">Incompleto</span></td>
+                <td>Prospecto: Metalúrgica del Pacífico</td>
+                <td>Falta teléfono</td>
+                <td>prospectos.xlsx</td>
+                <td><button class="btn-small">Completar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Ventas -->
+    <section class="module" id="module-ventas">
+      <div class="module-header">
+        <h2>💰 Módulo Ventas</h2>
+        <p>Embudo de ventas y análisis de eficiencia comercial</p>
+      </div>
+
+      <div class="filters">
+        <select class="filter-select">
+          <option>Todos los vendedores</option>
+          <option>Juan Pérez</option>
+          <option>María García</option>
+          <option>Carlos López</option>
+        </select>
+        <select class="filter-select">
+          <option>Último mes</option>
+          <option>Último trimestre</option>
+          <option>Último año</option>
+        </select>
+        <select class="filter-select">
+          <option>Todas las sucursales</option>
+          <option>Monterrey</option>
+          <option>Guadalajara</option>
+          <option>CDMX</option>
+        </select>
+      </div>
+
+      <div class="chart-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>Embudo de Ventas</h3>
+          </div>
+          <div class="funnel-chart" id="salesFunnel">
+            <div class="funnel-stage" style="width: 100%;">
+              <span class="funnel-label">Prospectos</span>
+              <span class="funnel-value">350</span>
+            </div>
+            <div class="funnel-stage" style="width: 70%;">
+              <span class="funnel-label">Contactados</span>
+              <span class="funnel-value">245</span>
+            </div>
+            <div class="funnel-stage" style="width: 50%;">
+              <span class="funnel-label">Cotizaciones</span>
+              <span class="funnel-value">175</span>
+            </div>
+            <div class="funnel-stage" style="width: 30%;">
+              <span class="funnel-label">Negociación</span>
+              <span class="funnel-value">105</span>
+            </div>
+            <div class="funnel-stage" style="width: 15%;">
+              <span class="funnel-label">Cerrados</span>
+              <span class="funnel-value">52</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Eficiencia por Vendedor</h3>
+          </div>
+          <div class="bar-chart" id="salesPerformance">
+            <div class="bar-item">
+              <div class="bar-label">Juan Pérez</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 85%;"></div>
+                <span class="bar-value">85%</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">María García</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 92%;"></div>
+                <span class="bar-value">92%</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Carlos López</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 78%;"></div>
+                <span class="bar-value">78%</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Ana Martínez</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 88%;"></div>
+                <span class="bar-value">88%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💵</div>
+          <div class="stat-info">
+            <div class="stat-value">$2.8M</div>
+            <div class="stat-label">Ventas del Mes</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-info">
+            <div class="stat-value">+18%</div>
+            <div class="stat-label">vs. Mes Anterior</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-info">
+            <div class="stat-value">93%</div>
+            <div class="stat-label">Meta Mensual</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-info">
+            <div class="stat-value">18 días</div>
+            <div class="stat-label">Ciclo Promedio</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Prospección Asistida -->
+    <section class="module" id="module-prospeccion">
+      <div class="module-header">
+        <h2>🎯 Módulo Prospección Asistida</h2>
+        <p>Prospectos sugeridos mediante web scraping y análisis de datos</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Nuevos Prospectos Detectados</h3>
+          <button class="btn-primary">Actualizar Lista</button>
+        </div>
+        <div class="prospect-grid">
+          <div class="prospect-card">
+            <div class="prospect-header">
+              <div class="prospect-company">Metalúrgica Industrial S.A.</div>
+              <div class="confidence-badge high">95% Confiabilidad</div>
+            </div>
+            <div class="prospect-details">
+              <div class="prospect-field">
+                <span class="field-label">Industria:</span>
+                <span class="field-value">Manufactura de Metal</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Ubicación:</span>
+                <span class="field-value">Monterrey, N.L.</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Empleados:</span>
+                <span class="field-value">150-200</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Fuente:</span>
+                <span class="field-value">LinkedIn + Web Scraping</span>
+              </div>
+            </div>
+            <div class="prospect-tags">
+              <span class="tag">Potencial Alto</span>
+              <span class="tag">Necesita Láser</span>
+            </div>
+            <div class="prospect-actions">
+              <button class="btn-small btn-success">Agregar a Pipeline</button>
+              <button class="btn-small">Ver Detalles</button>
+            </div>
+          </div>
+
+          <div class="prospect-card">
+            <div class="prospect-header">
+              <div class="prospect-company">TecnoPack Solutions</div>
+              <div class="confidence-badge medium">78% Confiabilidad</div>
+            </div>
+            <div class="prospect-details">
+              <div class="prospect-field">
+                <span class="field-label">Industria:</span>
+                <span class="field-value">Empaque y Embalaje</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Ubicación:</span>
+                <span class="field-value">Guadalajara, Jal.</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Empleados:</span>
+                <span class="field-value">50-100</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Fuente:</span>
+                <span class="field-value">Directorio Industrial</span>
+              </div>
+            </div>
+            <div class="prospect-tags">
+              <span class="tag">Potencial Medio</span>
+            </div>
+            <div class="prospect-actions">
+              <button class="btn-small btn-success">Agregar a Pipeline</button>
+              <button class="btn-small">Ver Detalles</button>
+            </div>
+          </div>
+
+          <div class="prospect-card">
+            <div class="prospect-header">
+              <div class="prospect-company">AutoPartes del Centro</div>
+              <div class="confidence-badge high">88% Confiabilidad</div>
+            </div>
+            <div class="prospect-details">
+              <div class="prospect-field">
+                <span class="field-label">Industria:</span>
+                <span class="field-value">Automotriz</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Ubicación:</span>
+                <span class="field-value">Querétaro, Qro.</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Empleados:</span>
+                <span class="field-value">200-300</span>
+              </div>
+              <div class="prospect-field">
+                <span class="field-label">Fuente:</span>
+                <span class="field-value">Análisis de Mercado</span>
+              </div>
+            </div>
+            <div class="prospect-tags">
+              <span class="tag">Potencial Alto</span>
+              <span class="tag">Urgente</span>
+            </div>
+            <div class="prospect-actions">
+              <button class="btn-small btn-success">Agregar a Pipeline</button>
+              <button class="btn-small">Ver Detalles</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Reportes Director -->
+    <section class="module" id="module-reportes">
+      <div class="module-header">
+        <h2>📈 Reportes del Director de Ventas</h2>
+        <p>Dashboard de productividad y planes mensuales</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-info">
+            <div class="stat-value">8</div>
+            <div class="stat-label">Vendedores Activos</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-info">
+            <div class="stat-value">87%</div>
+            <div class="stat-label">Cumplimiento Global</div>
+          </div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-info">
+            <div class="stat-value">2</div>
+            <div class="stat-label">Equipos Bajo Meta</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-info">
+            <div class="stat-value">$8.5M</div>
+            <div class="stat-label">Pipeline Total</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Desempeño por Equipo - Marzo 2024</h3>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Equipo/Vendedor</th>
+                <th>Meta Mensual</th>
+                <th>Actual</th>
+                <th>% Cumplimiento</th>
+                <th>Proyección</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="team-row">
+                <td><strong>Equipo Norte</strong></td>
+                <td>$1,200,000</td>
+                <td>$1,150,000</td>
+                <td>95.8%</td>
+                <td>$1,280,000</td>
+                <td><span class="badge badge-success">En Meta</span></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 2rem;">Juan Pérez</td>
+                <td>$400,000</td>
+                <td>$425,000</td>
+                <td>106.3%</td>
+                <td>$450,000</td>
+                <td><span class="badge badge-success">Superado</span></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 2rem;">María García</td>
+                <td>$400,000</td>
+                <td>$380,000</td>
+                <td>95%</td>
+                <td>$405,000</td>
+                <td><span class="badge badge-warning">En Riesgo</span></td>
+              </tr>
+              <tr class="team-row">
+                <td><strong>Equipo Centro</strong></td>
+                <td>$900,000</td>
+                <td>$720,000</td>
+                <td>80%</td>
+                <td>$850,000</td>
+                <td><span class="badge badge-danger">Bajo Meta</span></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 2rem;">Carlos López</td>
+                <td>$450,000</td>
+                <td>$360,000</td>
+                <td>80%</td>
+                <td>$420,000</td>
+                <td><span class="badge badge-warning">En Riesgo</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Alertas de Gestión</h3>
+        </div>
+        <div class="alerts-list">
+          <div class="alert-item warning">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+              <div class="alert-title">Equipo Centro bajo meta del mes</div>
+              <div class="alert-text">El equipo centro está al 80% de su meta mensual. Se requiere acción inmediata.
+              </div>
+            </div>
+            <button class="btn-small">Ver Detalles</button>
+          </div>
+          <div class="alert-item success">
+            <div class="alert-icon">✅</div>
+            <div class="alert-content">
+              <div class="alert-title">Juan Pérez superó meta mensual</div>
+              <div class="alert-text">Excelente desempeño con 106% de cumplimiento.</div>
+            </div>
+            <button class="btn-small">Ver Reporte</button>
+          </div>
+          <div class="alert-item info">
+            <div class="alert-icon">📊</div>
+            <div class="alert-content">
+              <div class="alert-title">Reporte semanal disponible</div>
+              <div class="alert-text">El reporte de productividad semanal está listo para revisión.</div>
+            </div>
+            <button class="btn-small">Descargar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Acceso y Roles -->
+    <section class="module" id="module-acceso">
+      <div class="module-header">
+        <h2>🔐 Módulo Acceso, Roles y Restricciones</h2>
+        <p>Gestión de usuarios, permisos y seguridad</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Gestión de Usuarios</h3>
+          <button class="btn-primary">+ Nuevo Usuario</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Usuario</th>
+                <th>Rol</th>
+                <th>Sucursal</th>
+                <th>Permisos</th>
+                <th>Último Acceso</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">JD</div>
+                    <div>
+                      <div class="user-name">Jorge Domínguez</div>
+                      <div class="user-email">jorge@crmlaser.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge admin">Administrador</span></td>
+                <td>Todas</td>
+                <td>
+                  <span class="permission-tag">Todos</span>
+                </td>
+                <td>Hace 10 min</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td>
+                  <button class="btn-icon">✏️</button>
+                  <button class="btn-icon">🔒</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">JP</div>
+                    <div>
+                      <div class="user-name">Juan Pérez</div>
+                      <div class="user-email">juan@crmlaser.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge seller">Vendedor</span></td>
+                <td>Monterrey</td>
+                <td>
+                  <span class="permission-tag">Ventas</span>
+                  <span class="permission-tag">Prospectos</span>
+                </td>
+                <td>Hace 2 horas</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td>
+                  <button class="btn-icon">✏️</button>
+                  <button class="btn-icon">👁️</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">MG</div>
+                    <div>
+                      <div class="user-name">María García</div>
+                      <div class="user-email">maria@crmlaser.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge director">Director Ventas</span></td>
+                <td>Región Norte</td>
+                <td>
+                  <span class="permission-tag">Ventas</span>
+                  <span class="permission-tag">Reportes</span>
+                  <span class="permission-tag">Equipo</span>
+                </td>
+                <td>Hace 1 hora</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td>
+                  <button class="btn-icon">✏️</button>
+                  <button class="btn-icon">👁️</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="roles-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>Roles del Sistema</h3>
+          </div>
+          <div class="roles-list">
+            <div class="role-item">
+              <div class="role-header">
+                <span class="role-badge admin">Administrador</span>
+                <span class="role-count">2 usuarios</span>
+              </div>
+              <div class="role-permissions">
+                ✓ Acceso total al sistema<br>
+                ✓ Gestión de usuarios<br>
+                ✓ Configuración de roles
+              </div>
+            </div>
+            <div class="role-item">
+              <div class="role-header">
+                <span class="role-badge director">Director de Ventas</span>
+                <span class="role-count">3 usuarios</span>
+              </div>
+              <div class="role-permissions">
+                ✓ Ver todos los reportes<br>
+                ✓ Gestionar equipos<br>
+                ✓ Asignar metas
+              </div>
+            </div>
+            <div class="role-item">
+              <div class="role-header">
+                <span class="role-badge seller">Vendedor</span>
+                <span class="role-count">8 usuarios</span>
+              </div>
+              <div class="role-permissions">
+                ✓ Gestionar prospectos propios<br>
+                ✓ Registrar ventas<br>
+                ✓ Ver pipeline personal
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Restricciones por Sucursal</h3>
+          </div>
+          <div class="restrictions-list">
+            <div class="restriction-item">
+              <div class="restriction-header">
+                <span class="location-badge">📍 Monterrey</span>
+                <span class="users-count">3 usuarios</span>
+              </div>
+              <div class="restriction-text">
+                Acceso limitado a datos de sucursal Monterrey
+              </div>
+            </div>
+            <div class="restriction-item">
+              <div class="restriction-header">
+                <span class="location-badge">📍 Guadalajara</span>
+                <span class="users-count">2 usuarios</span>
+              </div>
+              <div class="restriction-text">
+                Acceso limitado a datos de sucursal Guadalajara
+              </div>
+            </div>
+            <div class="restriction-item">
+              <div class="restriction-header">
+                <span class="location-badge">📍 CDMX</span>
+                <span class="users-count">3 usuarios</span>
+              </div>
+              <div class="restriction-text">
+                Acceso limitado a datos de sucursal CDMX
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulos de Prioridad Media y Baja -->
+    <section class="module" id="module-portabilidad">
+      <div class="module-header">
+        <h2>📱 Módulo Portabilidad</h2>
+        <p>Acceso móvil optimizado con sincronización en tiempo real</p>
+      </div>
+      <div class="card">
+        <div class="mobile-preview">
+          <div class="mobile-frame">
+            <div class="mobile-header">CRM Móvil</div>
+            <div class="mobile-content">
+              <p>✓ Acceso desde cualquier dispositivo</p>
+              <p>✓ Sincronización automática</p>
+              <p>✓ Gestión de pipeline en campo</p>
+              <p>✓ Registro de actividades offline</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-retencion">
+      <div class="module-header">
+        <h2>🔔 Módulo Retención y Motor de Alertas</h2>
+        <p>Recordatorios automáticos y seguimiento inteligente</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Alertas Programadas</h3>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">🔔</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Seguimiento a Cliente: Industrias XYZ</div>
+              <div class="timeline-text">Recordatorio: Llamar para cotización - Mañana 10:00 AM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">📧</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Post-venta: Equipos Láser Pro</div>
+              <div class="timeline-text">Enviar encuesta de satisfacción - En 2 días</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">⏰</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Renovación de contrato</div>
+              <div class="timeline-text">Metalúrgica del Norte - En 15 días</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-adopcion">
+      <div class="module-header">
+        <h2>📋 Módulo Adopción e Interfaz del Vendedor</h2>
+        <p>Integración con Google Sheets y edición colaborativa</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Mis Hojas de Trabajo</h3>
+          <button class="btn-primary">+ Nueva Hoja</button>
+        </div>
+        <div class="sheets-grid">
+          <div class="sheet-card">
+            <div class="sheet-icon">📊</div>
+            <div class="sheet-name">Pipeline Febrero 2024</div>
+            <div class="sheet-meta">Actualizado hace 1 hora</div>
+            <button class="btn-small">Abrir</button>
+          </div>
+          <div class="sheet-card">
+            <div class="sheet-icon">📈</div>
+            <div class="sheet-name">Seguimiento Clientes</div>
+            <div class="sheet-meta">Actualizado hace 3 horas</div>
+            <button class="btn-small">Abrir</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-fidelizacion">
+      <div class="module-header">
+        <h2>⭐ Módulo Fidelización</h2>
+        <p>Vista 360° del cliente con historial completo</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Perfil del Cliente</h3>
+        </div>
+        <div class="customer-360">
+          <div class="customer-header-360">
+            <div class="customer-avatar-large">IXY</div>
+            <div class="customer-info-360">
+              <h3>Industrias XYZ S.A. de C.V.</h3>
+              <div class="customer-meta">Cliente desde 2021 • Monterrey, N.L.</div>
+              <div class="customer-tags">
+                <span class="tag">Premium</span>
+                <span class="tag">Alta Frecuencia</span>
+              </div>
+            </div>
+          </div>
+          <div class="customer-metrics">
+            <div class="metric-box">
+              <div class="metric-value">$1.2M</div>
+              <div class="metric-label">Valor Total</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">24</div>
+              <div class="metric-label">Equipos Adquiridos</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">98%</div>
+              <div class="metric-label">Satisfacción</div>
+            </div>
+          </div>
+          <div class="customer-opportunities">
+            <h4>Oportunidades de Venta Cruzada</h4>
+            <div class="opportunity-item">
+              <span class="opportunity-icon">💡</span>
+              <span>Actualización de equipos láser de 2021</span>
+            </div>
+            <div class="opportunity-item">
+              <span class="opportunity-icon">💡</span>
+              <span>Servicio de mantenimiento preventivo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-operacion">
+      <div class="module-header">
+        <h2>⚙️ Módulo Operación</h2>
+        <p>Automatización de formatos y documentos</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Generación de Documentos</h3>
+          <button class="btn-primary">+ Nuevo Pedido</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Documento</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pedido #001234</td>
+                <td>Industrias del Norte</td>
+                <td>15/03/2024</td>
+                <td><span class="badge badge-success">Generado</span></td>
+                <td>
+                  <button class="btn-small">📄 Ver PDF</button>
+                  <button class="btn-small">📧 Enviar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Cotización #002455</td>
+                <td>TecnoLaser Mx</td>
+                <td>14/03/2024</td>
+                <td><span class="badge badge-warning">Pendiente</span></td>
+                <td>
+                  <button class="btn-small">✏️ Editar</button>
+                  <button class="btn-small">✓ Generar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

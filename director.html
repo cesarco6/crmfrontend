@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Director de Ventas - CRM Laser Systems</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="./assets/images/LOGO-QUANTUM-logochico.webp" alt="Logo CRM Laser Systems" class="logo-img">
+        <h1>CRM Laser Systems</h1>
+      </div>
+      <div class="user-info">
+        <!-- Removed theme toggle button -->
+        <span class="user-role">Director de Ventas</span>
+        <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">🔴 Prioridad Alta</div>
+        <a href="#module-datos" class="nav-link active" data-module="datos">
+          <span class="nav-icon">📊</span>
+          <span>Datos</span>
+        </a>
+        <a href="#module-ventas" class="nav-link" data-module="ventas">
+          <span class="nav-icon">💰</span>
+          <span>Ventas</span>
+        </a>
+
+        <a href="#module-reportes" class="nav-link" data-module="reportes">
+          <span class="nav-icon">📈</span>
+          <span>Reportes Director</span>
+        </a>
+        <a href="#module-acceso" class="nav-link" data-module="acceso">
+          <span class="nav-icon">🔐</span>
+          <span>Acceso y Roles</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">🟠 Prioridad Media</div>
+        <a href="#module-portabilidad" class="nav-link" data-module="portabilidad">
+          <span class="nav-icon">📱</span>
+          <span>Portabilidad</span>
+        </a>
+        <a href="#module-retencion" class="nav-link" data-module="retencion">
+          <span class="nav-icon">🔔</span>
+          <span>Retención y Alertas</span>
+        </a>
+        <a href="#module-adopcion" class="nav-link" data-module="adopcion">
+          <span class="nav-icon">📋</span>
+          <span>Interfaz Vendedor</span>
+        </a>
+        <a href="#module-fidelizacion" class="nav-link" data-module="fidelizacion">
+          <span class="nav-icon">⭐</span>
+          <span>Fidelización</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">🟡 Prioridad Baja</div>
+        <a href="#module-operacion" class="nav-link" data-module="operacion">
+          <span class="nav-icon">⚙️</span>
+          <span>Operación</span>
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+    <!-- Módulo Datos -->
+    <section class="module active" id="module-datos">
+      <div class="module-header">
+        <h2>📊 Datos</h2>
+        <p>Validación y calidad de datos en tiempo real</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <span class="stat-value">98.5%</span>
+            <span class="stat-label">Integridad de Datos</span>
+          </div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-info">
+            <span class="stat-value">12</span>
+            <span class="stat-label">Duplicados Detectados</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔄</div>
+          <div class="stat-info">
+            <span class="stat-value">Hace 5 min</span>
+            <span class="stat-label">Última Sincronización</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Validación de Datos</h3>
+          <button class="btn-primary">Sincronizar Ahora</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Campo</th>
+                <th>Registros</th>
+                <th>Validez</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Email</td>
+                <td>1,247</td>
+                <td><span class="badge badge-success">99.2%</span></td>
+                <td><button class="btn-small">Revisar</button></td>
+              </tr>
+              <tr>
+                <td>Teléfono</td>
+                <td>1,189</td>
+                <td><span class="badge badge-warning">95.6%</span></td>
+                <td><button class="btn-small">Resolver</button></td>
+              </tr>
+              <tr>
+                <td>Dirección</td>
+                <td>1,203</td>
+                <td><span class="badge badge-success">98.1%</span></td>
+                <td><button class="btn-small">Revisar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Ventas -->
+    <section class="module" id="module-ventas">
+      <div class="module-header">
+        <h2>💰 Ventas</h2>
+        <p>Pipeline y métricas de ventas</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-info">
+            <span class="stat-value">$2.4M</span>
+            <span class="stat-label">Pipeline Total</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-info">
+            <span class="stat-value">78%</span>
+            <span class="stat-label">Tasa de Cierre</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-info">
+            <span class="stat-value">156</span>
+            <span class="stat-label">Oportunidades Activas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>Embudo de Ventas</h3>
+          </div>
+          <div class="funnel-chart">
+            <div class="funnel-stage">
+              <span class="funnel-label">Prospectos</span>
+              <span class="funnel-value">240</span>
+            </div>
+            <div class="funnel-stage">
+              <span class="funnel-label">Calificados</span>
+              <span class="funnel-value">156</span>
+            </div>
+            <div class="funnel-stage">
+              <span class="funnel-label">Propuesta</span>
+              <span class="funnel-value">89</span>
+            </div>
+            <div class="funnel-stage">
+              <span class="funnel-label">Negociación</span>
+              <span class="funnel-value">45</span>
+            </div>
+            <div class="funnel-stage">
+              <span class="funnel-label">Cerrado</span>
+              <span class="funnel-value">35</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Rendimiento por Equipo</h3>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-item">
+              <div class="bar-label">Equipo Norte</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 85%"></div>
+                <div class="bar-value">85%</div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Equipo Sur</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 78%"></div>
+                <div class="bar-value">78%</div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Equipo Centro</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 92%"></div>
+                <div class="bar-value">92%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Reportes Director -->
+    <section class="module" id="module-reportes">
+      <div class="module-header">
+        <h2>📈 Reportes Director</h2>
+        <p>Análisis ejecutivo y métricas clave</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-info">
+            <span class="stat-value">$1.8M</span>
+            <span class="stat-label">Ventas del Mes</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-info">
+            <span class="stat-value">+23%</span>
+            <span class="stat-label">Crecimiento</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-info">
+            <span class="stat-value">87%</span>
+            <span class="stat-label">Meta Alcanzada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Desempeño del Equipo</h3>
+          <div class="filters">
+            <select class="filter-select">
+              <option>Este mes</option>
+              <option>Último trimestre</option>
+              <option>Este año</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Vendedor</th>
+                <th>Ventas</th>
+                <th>Meta</th>
+                <th>Cumplimiento</th>
+                <th>Comisión</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Juan Pérez</td>
+                <td>$450K</td>
+                <td>$400K</td>
+                <td><span class="badge badge-success">112%</span></td>
+                <td>$45,000</td>
+              </tr>
+              <tr>
+                <td>María García</td>
+                <td>$380K</td>
+                <td>$400K</td>
+                <td><span class="badge badge-warning">95%</span></td>
+                <td>$38,000</td>
+              </tr>
+              <tr>
+                <td>Carlos López</td>
+                <td>$520K</td>
+                <td>$450K</td>
+                <td><span class="badge badge-success">115%</span></td>
+                <td>$52,000</td>
+              </tr>
+              <tr>
+                <td>Ana Martínez</td>
+                <td>$340K</td>
+                <td>$350K</td>
+                <td><span class="badge badge-warning">97%</span></td>
+                <td>$34,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Acceso y Roles -->
+    <section class="module" id="module-acceso">
+      <div class="module-header">
+        <h2>🔐 Acceso y Roles</h2>
+        <p>Gestión de usuarios y permisos</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-info">
+            <span class="stat-value">24</span>
+            <span class="stat-label">Usuarios Activos</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔐</div>
+          <div class="stat-info">
+            <span class="stat-value">5</span>
+            <span class="stat-label">Roles Definidos</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-info">
+            <span class="stat-value">2</span>
+            <span class="stat-label">Accesos Pendientes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Usuarios del Sistema</h3>
+          <button class="btn-primary">Agregar Usuario</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Usuario</th>
+                <th>Rol</th>
+                <th>Permisos</th>
+                <th>Último Acceso</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">JP</div>
+                    <div>
+                      <div class="user-name">Juan Pérez</div>
+                      <div class="user-email">juan.perez@laser.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge admin">Administrador</span></td>
+                <td>
+                  <span class="permission-tag">Todos</span>
+                </td>
+                <td>Hace 2 horas</td>
+                <td>
+                  <button class="btn-icon">✏️</button>
+                  <button class="btn-icon">🗑️</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">MG</div>
+                    <div>
+                      <div class="user-name">María García</div>
+                      <div class="user-email">maria.garcia@laser.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge director">Director</span></td>
+                <td>
+                  <span class="permission-tag">Ventas</span>
+                  <span class="permission-tag">Reportes</span>
+                  <span class="permission-tag">Equipos</span>
+                </td>
+                <td>Hace 30 min</td>
+                <td>
+                  <button class="btn-icon">✏️</button>
+                  <button class="btn-icon">🗑️</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">CL</div>
+                    <div>
+                      <div class="user-name">Carlos López</div>
+                      <div class="user-email">carlos.lopez@laser.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge seller">Vendedor</span></td>
+                <td>
+                  <span class="permission-tag">Mis Clientes</span>
+                  <span class="permission-tag">Cotizaciones</span>
+                </td>
+                <td>Hace 1 hora</td>
+                <td>
+                  <button class="btn-icon">✏️</button>
+                  <button class="btn-icon">🗑️</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="roles-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>Roles y Permisos</h3>
+            <button class="btn-primary">Crear Rol</button>
+          </div>
+          <div class="roles-list">
+            <div class="role-item">
+              <div class="role-header">
+                <span class="role-badge admin">Administrador</span>
+                <span class="role-count">2 usuarios</span>
+              </div>
+              <div class="role-permissions">
+                • Acceso total al sistema<br>
+                • Gestión de usuarios<br>
+                • Configuración avanzada
+              </div>
+            </div>
+
+            <div class="role-item">
+              <div class="role-header">
+                <span class="role-badge director">Director de Ventas</span>
+                <span class="role-count">4 usuarios</span>
+              </div>
+              <div class="role-permissions">
+                • Ver todos los reportes<br>
+                • Gestionar equipos<br>
+                • Aprobar descuentos
+              </div>
+            </div>
+
+            <div class="role-item">
+              <div class="role-header">
+                <span class="role-badge seller">Vendedor</span>
+                <span class="role-count">18 usuarios</span>
+              </div>
+              <div class="role-permissions">
+                • Gestionar prospectos propios<br>
+                • Crear cotizaciones<br>
+                • Actualizar oportunidades
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Restricciones por Ubicación</h3>
+          </div>
+          <div class="restrictions-list">
+            <div class="restriction-item">
+              <div class="restriction-header">
+                <span class="location-badge">Zona Norte</span>
+                <span class="users-count">8 usuarios</span>
+              </div>
+              <div class="restriction-text">
+                Acceso solo a clientes de: Monterrey, Saltillo, Chihuahua
+              </div>
+            </div>
+
+            <div class="restriction-item">
+              <div class="restriction-header">
+                <span class="location-badge">Zona Centro</span>
+                <span class="users-count">10 usuarios</span>
+              </div>
+              <div class="restriction-text">
+                Acceso solo a clientes de: CDMX, Querétaro, Guadalajara
+              </div>
+            </div>
+
+            <div class="restriction-item">
+              <div class="restriction-header">
+                <span class="location-badge">Zona Sur</span>
+                <span class="users-count">6 usuarios</span>
+              </div>
+              <div class="restriction-text">
+                Acceso solo a clientes de: Puebla, Veracruz, Oaxaca
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulos de Prioridad Media y Baja (simplified placeholders) -->
+    <section class="module" id="module-portabilidad">
+      <div class="module-header">
+        <h2>📱 Portabilidad</h2>
+        <p>Gestión móvil y sincronización</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Aplicación Móvil</h3>
+        </div>
+        <div class="mobile-preview">
+          <div class="mobile-frame">
+            <div class="mobile-header">📱 App CRM Laser</div>
+            <div class="mobile-content">
+              ✓ Acceso sin conexión<br>
+              ✓ Sincronización automática<br>
+              ✓ Notificaciones push<br>
+              ✓ Geolocalización<br>
+              ✓ Captura de fotos
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-retencion">
+      <div class="module-header">
+        <h2>🔔 Retención y Alertas</h2>
+        <p>Sistema de alertas y retención de clientes</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Alertas Activas</h3>
+        </div>
+        <div class="alerts-list">
+          <div class="alert-item warning">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+              <div class="alert-title">Cliente en riesgo</div>
+              <div class="alert-text">AutoPartes SA - Sin contacto en 45 días</div>
+            </div>
+          </div>
+          <div class="alert-item success">
+            <div class="alert-icon">✅</div>
+            <div class="alert-content">
+              <div class="alert-title">Renovación exitosa</div>
+              <div class="alert-text">TecnoPack - Contrato renovado por 12 meses</div>
+            </div>
+          </div>
+          <div class="alert-item info">
+            <div class="alert-icon">ℹ️</div>
+            <div class="alert-content">
+              <div class="alert-title">Oportunidad de upsell</div>
+              <div class="alert-text">Metalúrgica Industrial - Interés en productos premium</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-adopcion">
+      <div class="module-header">
+        <h2>📋 Interfaz Vendedor</h2>
+        <p>Adopción y uso del sistema</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-info">
+            <span class="stat-value">89%</span>
+            <span class="stat-label">Tasa de Adopción</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-info">
+            <span class="stat-value">4.2h</span>
+            <span class="stat-label">Uso Diario Promedio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-fidelizacion">
+      <div class="module-header">
+        <h2>⭐ Fidelización</h2>
+        <p>Programas de lealtad y seguimiento</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Clientes Top</h3>
+        </div>
+        <div class="customer-360">
+          <div class="customer-header-360">
+            <div class="customer-avatar-large">MI</div>
+            <div class="customer-info-360">
+              <h3>Metalúrgica Industrial</h3>
+              <div class="customer-meta">Cliente desde 2020 • Monterrey, NL</div>
+              <div class="customer-tags">
+                <span class="badge badge-success">VIP</span>
+                <span class="badge badge-success">Pagos al día</span>
+              </div>
+            </div>
+          </div>
+          <div class="customer-metrics">
+            <div class="metric-box">
+              <div class="metric-value">$1.2M</div>
+              <div class="metric-label">Valor Lifetime</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">47</div>
+              <div class="metric-label">Órdenes</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">98%</div>
+              <div class="metric-label">Satisfacción</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module" id="module-operacion">
+      <div class="module-header">
+        <h2>⚙️ Operación</h2>
+        <p>Configuración y mantenimiento del sistema</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Estado del Sistema</h3>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-info">
+              <span class="stat-value">99.9%</span>
+              <span class="stat-label">Uptime</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-info">
+              <span class="stat-value">1.2s</span>
+              <span class="stat-label">Tiempo de Respuesta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

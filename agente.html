@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agente de Ventas - CRM Laser Systems</title>
+  <!-- Updated Luckysheet CDN links -->
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/css/pluginsCss.css' />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/plugins.css' />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/css/luckysheet.css' />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luckyexcel/dist/luckyexcel.css" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <!-- Added mobile menu toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        ☰
+      </button>
+      <div class="logo">
+        <h1>🔷 CRM Laser Systems</h1>
+      </div>
+      <div class="user-info">
+        <span class="user-role">Agente de Ventas</span>
+        <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">📋 Mi Panel</div>
+        <a href="#mis-ventas" class="nav-link active" data-module="mis-ventas">
+          <span class="nav-icon">💰</span>
+          <span>Mis Ventas</span>
+        </a>
+        <a href="#mis-prospectos" class="nav-link" data-module="mis-prospectos">
+          <span class="nav-icon">🎯</span>
+          <span>Mis Prospectos</span>
+        </a>
+        <a href="#mis-clientes" class="nav-link" data-module="mis-clientes">
+          <span class="nav-icon">👥</span>
+          <span>Mis Clientes</span>
+        </a>
+        <a href="#cotizaciones" class="nav-link" data-module="cotizaciones">
+          <span class="nav-icon">📄</span>
+          <span>Cotizaciones</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">📊 Seguimiento</div>
+        <a href="#actividades" class="nav-link" data-module="actividades">
+          <span class="nav-icon">✓</span>
+          <span>Actividades Diarias</span>
+        </a>
+        <a href="#calendario" class="nav-link" data-module="calendario">
+          <span class="nav-icon">📅</span>
+          <span>Calendario</span>
+        </a>
+        <a href="#mis-metas" class="nav-link" data-module="mis-metas">
+          <span class="nav-icon">🎯</span>
+          <span>Mis Metas</span>
+        </a>
+        <a href="#area-trabajo" class="nav-link" data-module="area-trabajo">
+          <span class="nav-icon">📊</span>
+          <span>Área de Trabajo</span>
+        </a>
+        <!-- Added bulk upload link for agents -->
+        <a href="#carga-masiva" class="nav-link" data-module="carga-masiva">
+          <span class="nav-icon">📤</span>
+          <span>Carga Masiva</span>
+        </a>
+        <!-- </CHANGE> -->
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Módulo Mis Ventas -->
+    <section class="module active" id="module-mis-ventas">
+      <div class="module-header">
+        <h2>💰 Mis Ventas</h2>
+        <p>Panel personal de ventas y desempeño</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💵</div>
+          <div class="stat-info">
+            <div class="stat-value">$350K</div>
+            <div class="stat-label">Ventas del Mes</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-info">
+            <div class="stat-value">+22%</div>
+            <div class="stat-label">vs. Mes Anterior</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-info">
+            <div class="stat-value">87%</div>
+            <div class="stat-label">Meta Mensual</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-info">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Cierres del Mes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>Mi Embudo de Ventas</h3>
+          </div>
+          <div class="funnel-chart">
+            <div class="funnel-stage" style="width: 100%;">
+              <span class="funnel-label">Mis Prospectos</span>
+              <span class="funnel-value">45</span>
+            </div>
+            <div class="funnel-stage" style="width: 75%;">
+              <span class="funnel-label">Contactados</span>
+              <span class="funnel-value">34</span>
+            </div>
+            <div class="funnel-stage" style="width: 60%;">
+              <span class="funnel-label">Cotizaciones</span>
+              <span class="funnel-value">27</span>
+            </div>
+            <div class="funnel-stage" style="width: 40%;">
+              <span class="funnel-label">Negociación</span>
+              <span class="funnel-value">18</span>
+            </div>
+            <div class="funnel-stage" style="width: 25%;">
+              <span class="funnel-label">Cerrados</span>
+              <span class="funnel-value">12</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Desempeño Mensual</h3>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-item">
+              <div class="bar-label">Enero</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 75%;"></div>
+                <span class="bar-value">$285K</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Febrero</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 82%;"></div>
+                <span class="bar-value">$312K</span>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Marzo</div>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 92%;"></div>
+                <span class="bar-value">$350K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Mis Oportunidades Activas</h3>
+          <button class="btn-primary">Nueva Oportunidad</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Etapa</th>
+                <th>Valor Estimado</th>
+                <th>Probabilidad</th>
+                <th>Próxima Acción</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Metalúrgica Industrial</td>
+                <td><span class="badge badge-warning">Negociación</span></td>
+                <td>$85,000</td>
+                <td>75%</td>
+                <td>Presentar propuesta final</td>
+                <td><button class="btn-small">Gestionar</button></td>
+              </tr>
+              <tr>
+                <td>AutoPartes del Norte</td>
+                <td><span class="badge badge-success">Cotización</span></td>
+                <td>$120,000</td>
+                <td>60%</td>
+                <td>Seguimiento telefónico</td>
+                <td><button class="btn-small">Gestionar</button></td>
+              </tr>
+              <tr>
+                <td>TecnoPack Solutions</td>
+                <td><span class="badge badge-warning">Negociación</span></td>
+                <td>$65,000</td>
+                <td>80%</td>
+                <td>Cerrar contrato</td>
+                <td><button class="btn-small">Gestionar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Mis Prospectos -->
+    <section class="module" id="module-mis-prospectos">
+      <div class="module-header">
+        <h2>🎯 Mis Prospectos</h2>
+        <p>Gestión de prospectos asignados</p>
+      </div>
+
+      <div class="filters">
+        <select class="filter-select">
+          <option>Todos los estados</option>
+          <option>Nuevo</option>
+          <option>Contactado</option>
+          <option>Calificado</option>
+          <option>Sin respuesta</option>
+        </select>
+        <select class="filter-select">
+          <option>Ordenar por fecha</option>
+          <option>Ordenar por prioridad</option>
+          <option>Ordenar por valor</option>
+        </select>
+      </div>
+
+      <div class="prospect-grid">
+        <div class="prospect-card">
+          <div class="prospect-header">
+            <div class="prospect-company">Industrias del Pacífico</div>
+            <div class="confidence-badge high">Alta Prioridad</div>
+          </div>
+          <div class="prospect-details">
+            <div class="prospect-field">
+              <span class="field-label">Contacto:</span>
+              <span class="field-value">Ing. Roberto Sánchez</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Teléfono:</span>
+              <span class="field-value">(81) 1234-5678</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Email:</span>
+              <span class="field-value">rsanchez@industriaspacifico.com</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Último contacto:</span>
+              <span class="field-value">Hace 2 días</span>
+            </div>
+          </div>
+          <div class="prospect-tags">
+            <span class="tag">Manufactura</span>
+            <span class="tag">Monterrey</span>
+          </div>
+          <div class="prospect-actions">
+            <button class="btn-small btn-success">Llamar</button>
+            <button class="btn-small">Enviar Email</button>
+            <button class="btn-small">Agendar</button>
+          </div>
+        </div>
+
+        <div class="prospect-card">
+          <div class="prospect-header">
+            <div class="prospect-company">Electrónica Avanzada</div>
+            <div class="confidence-badge medium">Media Prioridad</div>
+          </div>
+          <div class="prospect-details">
+            <div class="prospect-field">
+              <span class="field-label">Contacto:</span>
+              <span class="field-value">Lic. María González</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Teléfono:</span>
+              <span class="field-value">(33) 9876-5432</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Email:</span>
+              <span class="field-value">mgonzalez@electronica.com</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Último contacto:</span>
+              <span class="field-value">Hace 5 días</span>
+            </div>
+          </div>
+          <div class="prospect-tags">
+            <span class="tag">Electrónica</span>
+            <span class="tag">Guadalajara</span>
+          </div>
+          <div class="prospect-actions">
+            <button class="btn-small btn-success">Llamar</button>
+            <button class="btn-small">Enviar Email</button>
+            <button class="btn-small">Agendar</button>
+          </div>
+        </div>
+
+        <div class="prospect-card">
+          <div class="prospect-header">
+            <div class="prospect-company">Manufactura Express</div>
+            <div class="confidence-badge high">Alta Prioridad</div>
+          </div>
+          <div class="prospect-details">
+            <div class="prospect-field">
+              <span class="field-label">Contacto:</span>
+              <span class="field-value">Ing. Carlos Ramírez</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Teléfono:</span>
+              <span class="field-value">(55) 5555-1234</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Email:</span>
+              <span class="field-value">cramirez@mfgexpress.com</span>
+            </div>
+            <div class="prospect-field">
+              <span class="field-label">Último contacto:</span>
+              <span class="field-value">Hoy</span>
+            </div>
+          </div>
+          <div class="prospect-tags">
+            <span class="tag">Manufactura</span>
+            <span class="tag">CDMX</span>
+          </div>
+          <div class="prospect-actions">
+            <button class="btn-small btn-success">Llamar</button>
+            <button class="btn-small">Enviar Email</button>
+            <button class="btn-small">Agendar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Mis Clientes -->
+    <section class="module" id="module-mis-clientes">
+      <div class="module-header">
+        <h2>👥 Mis Clientes</h2>
+        <p>Cartera de clientes activos</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-info">
+            <div class="stat-value">28</div>
+            <div class="stat-label">Clientes Activos</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-info">
+            <div class="stat-value">4.8</div>
+            <div class="stat-label">Satisfacción Promedio</div>
+          </div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-icon">🔔</div>
+          <div class="stat-info">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Requieren Seguimiento</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-info">
+            <div class="stat-value">$12.5K</div>
+            <div class="stat-label">Valor Promedio</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Mis Clientes</h3>
+          <button class="btn-primary">Agregar Cliente</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Industria</th>
+                <th>Última Compra</th>
+                <th>Valor Total</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">II</div>
+                    <div>
+                      <div class="user-name">Industrias Integradas</div>
+                      <div class="user-email">contacto@industriasint.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Manufactura</td>
+                <td>Hace 2 semanas</td>
+                <td>$145,000</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td><button class="btn-small">Ver Perfil</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">TL</div>
+                    <div>
+                      <div class="user-name">TecnoLaser Mx</div>
+                      <div class="user-email">ventas@tecnolaser.mx</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Tecnología</td>
+                <td>Hace 1 mes</td>
+                <td>$89,500</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td><button class="btn-small">Ver Perfil</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar">MP</div>
+                    <div>
+                      <div class="user-name">Metalúrgica del Pacífico</div>
+                      <div class="user-email">info@metalpac.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Metalurgia</td>
+                <td>Hace 3 meses</td>
+                <td>$210,000</td>
+                <td><span class="badge badge-warning">Seguimiento</span></td>
+                <td><button class="btn-small">Ver Perfil</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Cotizaciones -->
+    <section class="module" id="module-cotizaciones">
+      <div class="module-header">
+        <h2>📄 Cotizaciones</h2>
+        <p>Gestión de cotizaciones y propuestas</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📄</div>
+          <div class="stat-info">
+            <div class="stat-value">18</div>
+            <div class="stat-label">Cotizaciones Activas</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Aprobadas</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-info">
+            <div class="stat-value">6</div>
+            <div class="stat-label">Pendientes</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💵</div>
+          <div class="stat-info">
+            <div class="stat-value">$890K</div>
+            <div class="stat-label">Valor Total</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Mis Cotizaciones</h3>
+          <button class="btn-primary">Nueva Cotización</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Folio</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Monto</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>COT-2025-0845</strong></td>
+                <td>Metalúrgica Industrial</td>
+                <td>15/03/2025</td>
+                <td>$85,000</td>
+                <td><span class="badge badge-warning">Pendiente</span></td>
+                <td>
+                  <button class="btn-small">Ver</button>
+                  <button class="btn-small">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>COT-2025-0842</strong></td>
+                <td>AutoPartes del Norte</td>
+                <td>14/03/2025</td>
+                <td>$120,000</td>
+                <td><span class="badge badge-success">Aprobada</span></td>
+                <td>
+                  <button class="btn-small">Ver</button>
+                  <button class="btn-small btn-success">Cerrar</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>COT-2025-0838</strong></td>
+                <td>TecnoPack Solutions</td>
+                <td>12/03/2025</td>
+                <td>$65,000</td>
+                <td><span class="badge badge-warning">Pendiente</span></td>
+                <td>
+                  <button class="btn-small">Ver</button>
+                  <button class="btn-small">Editar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Actividades Diarias -->
+    <section class="module" id="module-actividades">
+      <div class="module-header">
+        <h2>✓ Actividades Diarias</h2>
+        <p>Seguimiento de tareas y actividades</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">✓</div>
+          <div class="stat-info">
+            <div class="stat-value">8</div>
+            <div class="stat-label">Tareas Completadas</div>
+          </div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-icon">⏰</div>
+          <div class="stat-info">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Tareas Pendientes</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📞</div>
+          <div class="stat-info">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Llamadas Realizadas</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📧</div>
+          <div class="stat-info">
+            <div class="stat-value">23</div>
+            <div class="stat-label">Emails Enviados</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Tareas de Hoy</h3>
+          <button class="btn-primary">Nueva Tarea</button>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">✓</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Llamar a Metalúrgica Industrial</div>
+              <div class="timeline-text">Completado - 09:30 AM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">⏰</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Presentar propuesta a AutoPartes del Norte</div>
+              <div class="timeline-text">Pendiente - 02:00 PM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">⏰</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Seguimiento con TecnoPack Solutions</div>
+              <div class="timeline-text">Pendiente - 04:30 PM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">✓</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Actualizar CRM con nuevos contactos</div>
+              <div class="timeline-text">Completado - 11:00 AM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">⏰</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Preparar reporte semanal</div>
+              <div class="timeline-text">Pendiente - 05:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Calendario -->
+    <section class="module" id="module-calendario">
+      <div class="module-header">
+        <h2>📅 Calendario</h2>
+        <p>Agenda de reuniones y eventos</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Próximas Reuniones</h3>
+          <button class="btn-primary">Agendar Reunión</button>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">📅</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Presentación de producto - Metalúrgica Industrial</div>
+              <div class="timeline-text">Lunes, 18 de Marzo - 10:00 AM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">📅</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Reunión de seguimiento - AutoPartes del Norte</div>
+              <div class="timeline-text">Martes, 19 de Marzo - 02:00 PM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">📅</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Cierre de contrato - TecnoPack Solutions</div>
+              <div class="timeline-text">Miércoles, 20 de Marzo - 11:30 AM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">📅</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Reunión de equipo de ventas</div>
+              <div class="timeline-text">Jueves, 21 de Marzo - 09:00 AM</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">📅</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Visita a planta - Electrónica Avanzada</div>
+              <div class="timeline-text">Viernes, 22 de Marzo - 03:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Mis Metas -->
+    <section class="module" id="module-mis-metas">
+      <div class="module-header">
+        <h2>🎯 Mis Metas</h2>
+        <p>Seguimiento de objetivos personales</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Metas del Mes</h3>
+        </div>
+        <div class="bar-chart">
+          <div class="bar-item">
+            <div class="bar-label">Ventas Mensuales - Meta: $400K</div>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 87%;"></div>
+              <span class="bar-value">$350K (87%)</span>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label">Nuevos Clientes - Meta: 8</div>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 75%;"></div>
+              <span class="bar-value">6 clientes (75%)</span>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label">Cotizaciones Enviadas - Meta: 20</div>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 90%;"></div>
+              <span class="bar-value">18 cotizaciones (90%)</span>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label">Tasa de Conversión - Meta: 30%</div>
+            <div class="bar-container">
+              <div class="bar-fill" style="width: 93%;"></div>
+              <span class="bar-value">28% (93%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-info">
+            <div class="stat-value">3°</div>
+            <div class="stat-label">Posición en Ranking</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-info">
+            <div class="stat-value">450</div>
+            <div class="stat-label">Puntos Acumulados</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-info">
+            <div class="stat-value">87%</div>
+            <div class="stat-label">Promedio de Cumplimiento</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎖️</div>
+          <div class="stat-info">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Reconocimientos del Mes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Replaced Google Sheets with Luckysheet -->
+    <!-- Módulo Área de Trabajo (Luckysheet) -->
+    <section class="module" id="module-area-trabajo">
+      <div class="module-header">
+        <h2>📊 Área de Trabajo</h2>
+        <p>Hoja de cálculo integrada para gestionar tus datos</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Luckysheet - Hoja de Cálculo</h3>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn-small" onclick="loadTemplate('ventas')">📊 Plantilla Ventas</button>
+            <button class="btn-small" onclick="loadTemplate('prospectos')">🎯 Plantilla Prospectos</button>
+            <button class="btn-small" onclick="exportToCSV()">💾 Exportar CSV</button>
+            <button class="btn-small" onclick="addNewRow()">➕ Agregar Fila</button>
+            <button class="btn-small" onclick="clearSpreadsheet()">🗑️ Limpiar</button>
+          </div>
+        </div>
+
+        <!-- Simplified Luckysheet container with clean white background -->
+        <div class="luckysheet-container">
+          <div id="luckysheet" style="width: 100%; height: 100%;"></div>
+        </div>
+        <!-- </CHANGE> -->
+      </div>
+    </section>
+
+    <!-- Módulo Carga Masiva -->
+    <section class="module" id="module-carga-masiva">
+      <div class="module-header">
+        <h2>📤 Carga Masiva de Datos</h2>
+        <p>Importación de leads y clientes desde archivos formateados</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-info">
+            <span class="stat-value">145</span>
+            <span class="stat-label">Mis Cargas</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <span class="stat-value">138</span>
+            <span class="stat-label">Exitosas</span>
+          </div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-info">
+            <span class="stat-value">7</span>
+            <span class="stat-label">Con Errores</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Zona de Carga</h3>
+        </div>
+        <div class="upload-section">
+          <div class="upload-zone" id="dropZoneAgent" onclick="document.getElementById('fileInputAgent').click()">
+            <div class="upload-icon">📁</div>
+            <h3>Arrastra archivos aquí o haz clic para seleccionar</h3>
+            <p>Soporta archivos CSV y Excel con datos de leads y clientes</p>
+            <div class="upload-formats">
+              <span class="format-badge">.CSV</span>
+              <span class="format-badge">.XLSX</span>
+              <span class="format-badge">.XLS</span>
+            </div>
+            <input type="file" id="fileInputAgent" class="upload-input" accept=".csv,.xlsx,.xls" multiple>
+          </div>
+
+          <div class="upload-actions">
+            <button class="btn-primary" onclick="document.getElementById('fileInputAgent').click()">
+              Seleccionar Archivos
+            </button>
+            <button class="btn-small" onclick="showValidationRules()">
+              Ver Formato Requerido
+            </button>
+          </div>
+
+          <div class="upload-history">
+            <h4 style="margin-bottom: 1rem;">Mis Cargas Recientes</h4>
+            <div class="upload-item">
+              <div class="upload-item-info">
+                <div class="upload-filename">📄 mis_leads_marzo.csv</div>
+                <div class="upload-meta">45 registros • Importado hoy a las 9:15 AM</div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+              </div>
+              <div class="upload-status">
+                <span class="badge badge-success">Completado</span>
+              </div>
+            </div>
+
+            <div class="upload-item">
+              <div class="upload-item-info">
+                <div class="upload-filename">📄 clientes_actualizados.xlsx</div>
+                <div class="upload-meta">28 registros • Importado ayer</div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+              </div>
+              <div class="upload-status">
+                <span class="badge badge-success">Completado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card template-download-section">
+        <h3 style="margin-bottom: 0.5rem;">📋 Plantillas Disponibles</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
+          Descarga las plantillas para facilitar la importación
+        </p>
+        <div class="template-grid">
+          <div class="template-card" onclick="downloadTemplate('leads')">
+            <div class="template-icon">📊</div>
+            <div class="template-name">Plantilla de Leads</div>
+            <div class="template-desc">Formato para mis leads</div>
+            <button class="btn-small" style="margin-top: 0.5rem;">Descargar</button>
+          </div>
+
+          <div class="template-card" onclick="downloadTemplate('clientes')">
+            <div class="template-icon">👥</div>
+            <div class="template-name">Plantilla de Clientes</div>
+            <div class="template-desc">Formato para mis clientes</div>
+            <button class="btn-small" style="margin-top: 0.5rem;">Descargar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- </CHANGE> -->
+
+  </main>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" style="position: fixed; top: 80px; right: 20px; z-index: 1000;"></div>
+
+  <!-- Updated Luckysheet scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/js/plugin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/luckysheet.umd.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

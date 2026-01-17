@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agente de Ventas - CRM Laser Systems</title>
   <!-- Updated Luckysheet CDN links -->
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/css/pluginsCss.css' />
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/plugins/plugins.css' />
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/luckysheet@latest/dist/css/luckysheet.css' />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luckyexcel/dist/luckyexcel.css" />
+  <link rel='stylesheet' href='./plugins/pluginsCss.css' />
+  <link rel='stylesheet' href='./plugins/plugins.css' />
+  <link rel='stylesheet' href='./plugins/luckysheet.css' />
+  <link rel='stylesheet' href='./plugins/icofont.css' />
 
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
@@ -773,12 +773,10 @@
       </div>
     </section>
 
-    <!-- Replaced Google Sheets with Luckysheet -->
     <!-- Módulo Área de Trabajo (Luckysheet) -->
     <section class="module" id="module-area-trabajo">
       <div class="module-header">
         <h2>📊 Área de Trabajo</h2>
-        <p>Hoja de cálculo integrada para gestionar tus datos</p>
       </div>
 
       <div class="card">
@@ -795,9 +793,11 @@
 
         <!-- Simplified Luckysheet container with clean white background -->
         <div class="luckysheet-container">
-          <div id="luckysheet" style="width: 100%; height: 100%;"></div>
+          <div class="crm-module">
+            <div id="luckysheet"></div>
+          </div>
         </div>
-        <!-- </CHANGE> -->
+
       </div>
     </section>
 

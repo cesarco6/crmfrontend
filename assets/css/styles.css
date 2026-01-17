@@ -1214,37 +1214,6 @@ body {
   gap: 0.5rem;
 }
 
-.sheets-iframe-wrapper {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  background-color: var(--background);
-}
-
-.google-sheet-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background-color: white;
-}
-
-.sheets-placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--background);
-  padding: 2rem;
-}
-
-.sheets-placeholder.hidden {
-  display: none;
-}
-
 .placeholder-content {
   max-width: 600px;
   text-align: center;
@@ -1277,18 +1246,85 @@ body {
 /* Improved Luckysheet container styles for better visibility */
 .luckysheet-container {
   width: 100%;
-  height: 650px;
+  height: 70%;
+  color: #000;
   background-color: #ffffff;
   border-radius: var(--radius);
   overflow: hidden;
   margin-top: 1rem;
 }
 
+/* Contenedor del módulo CRM */
+.crm-module {
+  position: relative;
+  width: 100%;
+  height: calc(60vh - 64px);
+  /* ajusta según tu layout */
+  background: #fff;
+  overflow: auto;
+  /* permite scroll si la hoja es más grande */
+}
+
+/* Luckysheet ocupa todo el módulo */
 #luckysheet {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background: #fff;
+  position: relative;
 }
+
+/* Forzar que el div interno de Luckysheet se expanda */
+#luckysheet .luckysheet {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Texto dentro de las celdas (canvas + overlay) */
+.luckysheet-cell-main {
+  color: #000 !important;
+  background: #fff !important;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* Editor flotante visible mientras escribes */
+.luckysheet-input-box {
+  background: #fff !important;
+  color: #000 !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+}
+
+.luckysheet-input-box textarea {
+  background: #fff !important;
+  color: #000 !important;
+  opacity: 1 !important;
+  z-index: 10000 !important;
+  position: absolute !important;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* Barra de fórmulas */
+#luckysheet-functionbox-cell {
+  background: #fff !important;
+  color: #000 !important;
+  opacity: 1 !important;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* Toolbar y menús */
+.luckysheet-toolbar,
+.luckysheet-menu {
+  background: #f8fafc !important;
+  color: #000 !important;
+  z-index: 2000 !important;
+}
+
+.luckysheet-toolbar button,
+.luckysheet-toolbar span,
+.luckysheet-menu li {
+  color: #000 !important;
+}
+
 
 /* Added bulk upload section styles */
 .upload-section {

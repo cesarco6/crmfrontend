@@ -219,11 +219,11 @@ document.addEventListener("DOMContentLoaded", () => {
           data: [],
           config: {
             columnlen: {
-              0: 150,
-              1: 150,
-              2: 150,
-              3: 150,
-              4: 150,
+              0: 100,
+              1: 100,
+              2: 100,
+              3: 100,
+              4: 100,
             },
           },
         },
@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       luckysheet.create(options)
+      window.dispatchEvent(new Event("resize"));
       console.log("[v0] Luckysheet initialized successfully")
       showToast("Hoja de cálculo lista", "success")
     } catch (error) {
